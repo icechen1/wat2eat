@@ -48,6 +48,18 @@ angular.module('starter.controllers', [])
 })
 .controller('NutritionCtrl', function($scope, $stateParams,$http) {
     $scope.id = $stateParams.id;
+
+    var url = 'https://api.uwaterloo.ca/v2/foodservices/products/'+ id +'.json?key=a84456bafc8bb0eb83ca3c989634ef68';
+    $scope.data = {};
+    //console.log(url);
+    $http.get(url).
+    success(function(data, status, headers, config) {
+          $scope.data = data.data;
+          console.log("get productions = ", id);
+    }).
+    error(function(data, status, headers, config) {
+      // log error
+    });
 })
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 });
