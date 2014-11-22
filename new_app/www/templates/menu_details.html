@@ -1,4 +1,4 @@
-<ion-view title="{{data[i].title}}">
+<ion-view title="{{data[id].outlet_name}}">
     <ion-nav-buttons side="left">
         <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
     </ion-nav-buttons>
@@ -14,12 +14,11 @@
                         {{ j }}
                     </div>
                     <a class="item" ng-repeat="l in k" href="#/app/product/{{l.product_id}}">
-
-                        <h2>{{l.product_name}} </h2>
+                        <h2>{{l.product_name}}</h2>
                         <p>{{l.diet_type}}</p>
                     </a>
                 </div>
-                {{j.notes}}
+               {{j.notes}}
             </div>
             <div class="item item-icon-left" ng-click="nextMonth()" ng-show="loaded">
                 <i class="icon ion-plus-round"></i>Load next month

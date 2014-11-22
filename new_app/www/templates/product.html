@@ -1,18 +1,24 @@
-<ion-view title="{{i.company}}">
+<ion-view title="{{item.product_name}}">
+        <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
   <ion-content class="has-header">
     <div class="list card">
 
       <div class="item item-icon-left">
         <i class="icon ion-calendar"></i>
-
+{{item.ingredients}}
       </div>
-
+      <div class="item item-icon-left">
+        <i class="icon ion-calendar"></i>
+{{item.diet_type}}
+      </div>
       <div class="item item-icon-left">
         <i class="icon ion-home"></i>
         <h2>{{item.location}}</h2>
       </div>
 
-      <div class="item item-icon-left item-text-wrap" ng-show="item.description">
+      <div class="item item-icon-left item-text-wrap">
         <i class="icon ion-card"></i>
         
 <h2>{{item.product_name}}</h2>
@@ -141,10 +147,6 @@
       <a ng-click="window.open('{{item.website}}', '_system');" class="item item-icon-left">
         <i class="icon ion-earth"></i>
         Go to website
-      </a>
-      <a ng-click="window.open('{{item.rsvplink}}', '_system');" class="item item-icon-left">
-        <i class="icon ion-log-in"></i>
-        RSVP
       </a>
     </div>
   </ion-content>

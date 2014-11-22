@@ -66,7 +66,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     })
     .state('app.products', {
-      url: "/products/:id",
+      url: "/product/:id",
       views: {
         'menuContent' :{
           templateUrl: "templates/product.html",
@@ -75,6 +75,6 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/menus');
+  $urlRouterProvider.otherwise('/app/menu/0');
 });
 
