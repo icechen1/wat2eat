@@ -66,7 +66,7 @@ app.get('/api/menu', function(req, res){
                     //console.log(td.length);
                     for(var i=1;i<6;i++){
                         var row = {date:dates[i-1],
-                                   menu:td.html()};
+                                   menu:td.slice(i).ep(0).html()};
                         menu_row.items.push(row);
                         console.log(row);
                         console.log(td.html());
