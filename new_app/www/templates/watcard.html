@@ -1,0 +1,30 @@
+<ion-view title="Watcard">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header">
+      <form method="post" action="https://account.watcard.uwaterloo.ca/watgopher661.asp">
+          <div class="list">
+              <label class="item item-input">
+                <input type="text" name="acnt_1"placeholder="Quest ID">
+              </label>
+              <label class="item item-input">
+                <input type="password" name="acnt_2" placeholder="Password">
+              </label>
+              <input type="hidden" name="FINDATAREP" value="ON" />
+              <input type="hidden" name="MESSAGEREP" value="ON" />
+              <input type="hidden" name="STATUS" value="STATUS" />
+              <input type="hidden" name="watgopher_title" value="WatCard+Account+Status" />
+              <input type="hidden" name="watgopher_regex" value="/<hr>([\s\S]*)<hr>/;" />
+              <input type="hidden" name="watgopher_style" value="onecard_regular" />
+              <label class="item item-input">
+                <!-- <a href="#/app/checkbalances" style="text-decoration: none"> -->
+                <button class="button button-positive" >
+                    Check my balance
+                </button>
+              </label>
+              
+            </div>
+    </form>
+  </ion-content>
+</ion-view>
