@@ -1,29 +1,48 @@
 /* Empty. Add your own CSS if you like */
 .prod{
-	font-size: 3em;
+	font-size: 25px;
 }
 .nutri{
-	font-size: 2em;
+	font-size: 20px;
+	padding-top: 10px;
 }
-.bold_border{
-	border-bottom: 3px;
-	border-bottom: solid;
-	border-bottom: black;
+li.bold_border{
+	border-bottom-width:  3px;
+	border-bottom-style: solid;
+	border-bottom-color: black;
 }
-.medium_border{
-	border-bottom: 2px;
-	border-bottom: solid;
-	border-bottom: black;
+li.medium_border{
+	border-bottom-width:  1px;
+	border-bottom-style: solid;
+	border-bottom-color: black;
 }
-.thin_border{
-	border-bottom: 1px;
-	border-bottom: solid;
-	border-bottom: black;
+li.thin_border{
+	border-bottom-width:  3px;
+	border-bottom-style: solid;
+	border-bottom-color: black;
 }
 .table_nutri{
 	max-width: 600px;
 	border: solid 1px black;
+	height: auto;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 20px;
 }
-.left{
-	
+.align_left{
+	width: 50%;
+}
+.align_right {
+	width: 50%;
+	float: right;
+	position: relative;
+	top:-20px;
+	text-align: right;
+
+}
+li{
+	min-height: 2em;
+}
+.rest{
+	font-size: 16px;
 }

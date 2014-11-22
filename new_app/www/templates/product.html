@@ -20,12 +20,12 @@
 
       <div class="item item-icon-left item-text-wrap">
         <i class="icon ion-card"></i>
-        <div class="table_nutri">
-        <h2 class="prod">{{item.product_name}}</h2>
+        <div class="table_nutri prod">
+        {{item.product_name}}
         <ul>
-          <li><h4 class="nutri">Nutrition Facts</h4></li>
-          <li class="bold_border">Per {{item.serving_size}}</li>
-          <li class="medium_border">
+          <li class="nutri">Nutrition Facts</li>
+          <li class="bold_border rest">Per {{item.serving_size}}</li>
+          <li class="medium_border rest">
             <div class="align_left">
               Amount
             </div>
@@ -34,22 +34,22 @@
             </div>
           </li>
 
-          <li class="thin_border">
+          <li class="thin_border rest">
             <div class="align_left">
               <b>Calories</b> {{item.calories}}
             </div>
           </li>
 
-          <li class="thin_border">
+          <li class="thin_border rest">
             <div class="align_left">
               <b>Fat</b> {{item.total_fat_g}} g
             </div>
-            <div class="align_right">
+            <div class="align_right rest">
               <b>{{item.total_fat_percent}}</b> %
             </div>
           </li>
 
-          <li class="thin_border">
+          <li class="thin_border rest">
             <div class="align_left">
              &nbsp; Saturated {{item.fat_saturated_g}} g <br/>
              &nbsp; + Trans {{fat_trans_g}} g
@@ -59,13 +59,13 @@
             </div>
           </li>
 
-          <li class="thin_border">
+          <li class="thin_border rest">
             <div class="align_left">
               <b>Cholesterol</b> {{item.cholesterol_mg}} mg
             </div>
           </li>
 
-          <li class="thin_border">
+          <li class="thin_border rest">
             <div class="align_left">
               <b>Sodium</b> {{item.sodium}} mg
             </div>
@@ -74,7 +74,7 @@
             </div>
           </li>
 
-          <li class="thin_border">
+          <li class="thin_border rest">
             <div class="align_left">
               <b>Carbohydrate</b> {{item.carbo_g}} g
             </div>
@@ -83,7 +83,7 @@
             </div>
           </li>
         
-          <li class="thin_border">
+          <li class="thin_border rest">
             <div class="align_left">
              &nbsp; Saturated {{item.fat_saturated_g}} g <br/>
              &nbsp; + Trans {{fat_trans_g}} g
@@ -93,7 +93,7 @@
             </div>
           </li>
 
-          <li class="thin_border">
+          <li class="thin_border rest">
             <div class="align_left">
              &nbsp; Fibre {{item.carbo_fibre_g}} g
             </div>
@@ -102,19 +102,19 @@
             </div>
           </li>
 
-          <li class="thin_border">
+          <li class="thin_border rest">
             <div class="align_left">
              &nbsp; Sugars {{item.carbo_sugars_g}} g
             </div>
           </li>
 
-          <li class="bold_border">
+          <li class="bold_border rest">
             <div class="align_left">
               <b>Protein</b> {{item.protein_g}} g
             </div>
           </li>
 
-          <li class="thin_border">
+          <li class="thin_border rest">
             <div class="align_left">
              Vitamin A 
             </div>
@@ -123,16 +123,16 @@
             </div>
           </li>
 
-          <li class="thin_border">
+          <li class="thin_border rest">
             <div class="align_left">
              Vitamin C 
             </div>
-            <div class="align_right">
+            <div class="align_right rest">
               {{item.vitamin_c_percent}} %
             </div>
           </li>
 
-          <li class="thin_border">
+          <li class="thin_border rest">
             <div class="align_left">
              Ion
             </div>
