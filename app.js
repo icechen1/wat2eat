@@ -68,7 +68,9 @@ app.get('/api/menu', function(req, res){
                         var row = {date:dates[i-1],
                                    menu:td[i]};
                         menu_row.items.push(row);
-                        //console.log(row);
+                        console.log(row);
+                        console.log(td.html());
+                        
                     }
                     menu.items.push({caf_name:name,data:menu_row});
                     //console.log(menu);
