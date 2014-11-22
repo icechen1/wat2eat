@@ -12,12 +12,12 @@ li.bold_border{
 	border-bottom-color: black;
 }
 li.medium_border{
-	border-bottom-width:  1px;
+	border-bottom-width:  2px;
 	border-bottom-style: solid;
 	border-bottom-color: black;
 }
 li.thin_border{
-	border-bottom-width:  3px;
+	border-bottom-width:  1px;
 	border-bottom-style: solid;
 	border-bottom-color: black;
 }
