@@ -1,12 +1,13 @@
-UW Infosession API
+Wat2Eat
 =========
 
 An unofficial API to access information about coop info sessions at University of Waterloo. Runs on node.js, Moment, Express and Cheerio
 
-By Yu Chen Hou
+By a lot of people
 
-  - Access info session information without using the clumbsy website
-  - Access info sessions by month
+  - Access menu information without using the clumbsy website
+  - Access menus by day
+  - Load nutition info
 
 Source: https://github.com/icechen1/uw_infosession
 
@@ -18,13 +19,13 @@ Version
 Api Endpoints
 -----------
 
-/api/calendar/[params]
+/api/menu/[params]
 ----
 
 *optional*: params:
 
 ```js
-/api/calendar/:year/:month
+/api/calendar/:dayOfYear
 ```
 
 **Default: Current month**

@@ -29,7 +29,7 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('EventsCtrl', function($scope,$http,$q,$stateParams) {
+.controller('MenuCtrl', function($scope,$http,$q,$stateParams) {
     $scope.year = $stateParams.year;
     $scope.month = $stateParams.month;
     $scope.isPastFilteringEnabled = true;
@@ -39,32 +39,12 @@ angular.module('starter.controllers', [])
         $scope.current = datetime;
         console.log("Load month: " + $scope.current.getMonth());
         var month = parseInt(datetime.getMonth())+1;
-        var url = 'http://uw-infosession.herokuapp.com/api/calendar/'
-            +datetime.getFullYear()+
-            "/"+month;
+        var url = 'https://api.uwaterloo.ca/v2/foodservices/menu.json?key=a84456bafc8bb0eb83ca3c989634ef68';
         //console.log(url);
         $http.get(url).
         success(function(data, status, headers, config) {
-          //$scope.events = data;
-          //console.log($scope.events);
-          //Load up more details
           var promises = [];
-          angular.forEach(data, function(event_info) {
-           //console.log(event_info.id);
-            var request = $http.get('http://uw-infosession.herokuapp.com/api/event/'+event_info.id);
-            promises.push(request); //QUEUE THE REQUEST
-           });
-         $q.all(promises).then(function(values) {
-             //console.log(values);
-             for (var i = 0; i < values.length; ++i) {
-                data[i].details = values[i].data;
-                data[i].visible = true; //so the filter shows it
-                $scope.events.push(data[i]);
-            }
-             console.log($scope.events);
-             $scope.$parent.events = $scope.events; //pass to parent scope
-             $scope.loaded = true;
-         });
+
         }).
         error(function(data, status, headers, config) {
           // log error
