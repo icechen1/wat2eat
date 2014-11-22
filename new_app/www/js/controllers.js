@@ -36,7 +36,7 @@ angular.module('starter.controllers', [])
     //console.log(url);
     $http.get(url).
     success(function(data, status, headers, config) {
-          $scope.data = data;
+          $scope.data = data.data;
     }).
     error(function(data, status, headers, config) {
       // log error
