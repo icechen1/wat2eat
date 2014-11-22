@@ -52,58 +52,42 @@ app.get('/api/calendar', function(req, res){
                 json.push(thisJson);
 	        })
 		}
-        // To write to the system we will use the built in 'fs' library.
-        // In this example we will pass 3 parameters to the writeFile function
-        // Parameter 1 :  output.json - this is what the created filename will be called
-        // Parameter 2 :  JSON.stringify(json, null, 4) - the data to write, here we do an extra step by calling JSON.stringify to make our JSON easier to read
-        // Parameter 3 :  callback function - a callback function to let us know the status of our function
-
-  /*      fs.writeFile('output.json', JSON.stringify(json, null, 4), function(err){
-
-        	console.log('File successfully written! - Check your project directory for the output.json file');
-
-        }) */
 
         // Finally, we'll just send out a message to the browser reminding you that this app does not have a UI.
         res.send(json);
 	})
 });
 
-app.get('/api/calendar/:year/:month', function(req, res){
+app.get('/api/menu/product/:id', function(req, res){
+	var id = req.param("id");
 	
-	url = 'http://www.ceca.uwaterloo.ca/students/sessions.php?month_num='+req.param("month")+'&year_num='+req.param("year");
+	url ='https://uwaterloo.ca/food-services/menu/product/'+id;
 
 	request(url, function(error, response, html){
 		if(!error){
 			var $ = cheerio.load(html);
+			
 
-			var company;
+			var name = $('#content h1').text().slice(21);
+			var size = $('.content dd').slice(0).eq(0).text();
+			var type = $('.content dd').slice(1).eq(0).text();
+			var ingredients = $('.content dd').slice(2).eq(0).text();
+			var facts = $('.uw_food_services-nutrition').html();
+			
             //var link;
-			var json = [];
+			var json = {name : "", 
+						size : "", 
+						type:"",
+						ingredients:"", 
+						facts_html:""};
+						
+			json.name=name;
+			json.size=size;
+			json.type=type;
+			json.ingredients=ingredients;
+			json.facts_html=facts;
             
-			$('a[onmouseover]').each(function(i,elem){
-		        var data = $(this);
-		        company = data.text();//data.children().first().text();            
-                link = data.attr('href');//children().last().children().text();
-                var thisJson = { company : "", link : "", id:"",info:""};
-		        thisJson.company = company;
-                thisJson.link = link;
-                thisJson.id = link.match(/=(.+)/)[1];
-                //thisJson.info = getEventDetails(thisJson.id);
-                json.push(thisJson);
-	        })
 		}
-        // To write to the system we will use the built in 'fs' library.
-        // In this example we will pass 3 parameters to the writeFile function
-        // Parameter 1 :  output.json - this is what the created filename will be called
-        // Parameter 2 :  JSON.stringify(json, null, 4) - the data to write, here we do an extra step by calling JSON.stringify to make our JSON easier to read
-        // Parameter 3 :  callback function - a callback function to let us know the status of our function
-
-       /* fs.writeFile('output.json', JSON.stringify(json, null, 4), function(err){
-
-        	console.log('File successfully written! - Check your project directory for the output.json file');
-
-        }) */
 
         // Finally, we'll just send out a message to the browser reminding you that this app does not have a UI.
         res.send(json);
