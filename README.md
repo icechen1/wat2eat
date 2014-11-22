@@ -30,7 +30,7 @@ Api Endpoints
 
 **Default: Current month**
 
-Returns a JSON formatted list for every info session happening in the given month containing:
+Returns a JSON formatted list for every info session happening in the given month containing:f
 
 * **company:** Name of the company
 * **link:** URL to the detailed information page

@@ -51,7 +51,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       url: "/menus",
       views: {
         'menuContent' :{
-          templateUrl: "templates/menus.html",
+          templateUrl: "templates/menu_listing.html",
           controller: 'MenuCtrl'
         }
       }
