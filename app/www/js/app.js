@@ -30,29 +30,46 @@ angular.module('starter', ['ionic', 'starter.controllers','angular.filter'])
       controller: 'AppCtrl'
     })
 
-    .state('app.credits', {
+    .state('app.search', {
       url: "/search",
       views: {
         'menuContent' :{
-          templateUrl: "templates/credits.html"
+          templateUrl: "templates/search.html"
+        }
+      }
+    })
+  
+   .state('app.foodmenu', {
+      url: "/foodmenu",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/foodmenu.html"
         }
       }
     })
 
-    .state('app.browse', {
-      url: "/browse",
+    .state('app.watcard', {
+      url: "/watcard",
       views: {
         'menuContent' :{
-          templateUrl: "templates/browse.html"
+          templateUrl: "templates/watcard.html"
         }
       }
     })
-    .state('app.events/:year/:month', {
-      url: "/events/:year/:month",
+  
+    .state('app.locations', {
+      url: "/locations",
       views: {
         'menuContent' :{
-          templateUrl: "templates/events.html",
-          controller: 'EventsCtrl'
+          templateUrl: "templates/locations.html"
+        }
+      }
+    })
+    .state('app.home', {
+      url: "/home",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/home.html"
         }
       }
     })
@@ -60,7 +77,7 @@ angular.module('starter', ['ionic', 'starter.controllers','angular.filter'])
       url: "/events",
       views: {
         'menuContent' :{
-          templateUrl: "templates/events.html",
+          templateUrl: "templates/home.html",
           controller: 'EventsCtrl'
         }
       }
