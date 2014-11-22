@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout,$http) {
   // Form data for the login modal
   $scope.loginData = {};
 
@@ -31,9 +31,19 @@ angular.module('starter.controllers', [])
       $scope.closeLogin();
     }, 1000);
   };
+    var url = 'https://api.uwaterloo.ca/v2/foodservices/menu.json?key=a84456bafc8bb0eb83ca3c989634ef68';
+    $scope.data = {};
+    //console.log(url);
+    $http.get(url).
+    success(function(data, status, headers, config) {
+          $scope.data = data;
+    }).
+    error(function(data, status, headers, config) {
+      // log error
+    });
 })
 
-.controller('PlaylistsCtrl', function($scope) {
+.controller('MenuCtrl', function($scope) {
   $scope.playlists = [
     { title: 'Reggae', id: 1 },
     { title: 'Chill', id: 2 },
