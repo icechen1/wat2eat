@@ -4,8 +4,7 @@
 
       <div class="item item-icon-left">
         <i class="icon ion-calendar"></i>
-        <h2>{{item.date}}</h2>
-        <h4>{{item.time}}</h4>
+
       </div>
 
       <div class="item item-icon-left">
@@ -15,7 +14,129 @@
 
       <div class="item item-icon-left item-text-wrap" ng-show="item.description">
         <i class="icon ion-card"></i>
-        <h3>{{item.description}}</h3>
+        
+<h2>{{item.product_name}}</h2>
+        <ul>
+          <li><h4>Nutrition Facts</h4></li>
+          <li class="bold_border">Per {{item.serving_size}}</li>
+          <li class="medium_border">
+            <div class="align_left">
+              Amount
+            </div>
+            <div class="align_right">
+              % Daily Value
+            </div>
+          </li>
+
+          <li class="thin_border">
+            <div class="align_left">
+              <b>Calories</b> {{item.calories}}
+            </div>
+          </li>
+
+          <li class="thin_border">
+            <div class="align_left">
+              <b>Fat</b> {{item.total_fat_g}} g
+            </div>
+            <div class="align_right">
+              <b>{{item.total_fat_percent}}</b> %
+            </div>
+          </li>
+
+          <li class="thin_border">
+            <div class="align_left">
+             &nbsp; Saturated {{item.fat_saturated_g}} g <br/>
+             &nbsp; + Trans {{fat_trans_g}} g
+            </div>
+            <div class="align_right">
+              <b>{{item.fat_saturated_percent}} </b> %
+            </div>
+          </li>
+
+          <li class="thin_border">
+            <div class="align_left">
+              <b>Cholesterol</b> {{item.cholesterol_mg}} mg
+            </div>
+          </li>
+
+          <li class="thin_border">
+            <div class="align_left">
+              <b>Sodium</b> {{item.sodium}} mg
+            </div>
+            <div class="align_right">
+              <b>{{item.sodium_percent}}</b> %
+            </div>
+          </li>
+
+          <li class="thin_border">
+            <div class="align_left">
+              <b>Carbohydrate</b> {{item.carbo_g}} g
+            </div>
+            <div class="align_right">
+              <b>{{item.carbo_percent}}</b> %
+            </div>
+          </li>
+        
+          <li class="thin_border">
+            <div class="align_left">
+             &nbsp; Saturated {{item.fat_saturated_g}} g <br/>
+             &nbsp; + Trans {{fat_trans_g}} g
+            </div>
+            <div class="align_right">
+              <b>{{item.fat_saturated_percent}} </b> %
+            </div>
+          </li>
+
+          <li class="thin_border">
+            <div class="align_left">
+             &nbsp; Fibre {{item.carbo_fibre_g}} g
+            </div>
+            <div class="align_right">
+              <b>{{item.carbo_fibre_percent}} </b> %
+            </div>
+          </li>
+
+          <li class="thin_border">
+            <div class="align_left">
+             &nbsp; Sugars {{item.carbo_sugars_g}} g
+            </div>
+          </li>
+
+          <li class="bold_border">
+            <div class="align_left">
+              <b>Protein</b> {{item.protein_g}} g
+            </div>
+          </li>
+
+          <li class="thin_border">
+            <div class="align_left">
+             Vitamin A 
+            </div>
+            <div class="align_right">
+              {{item.vitamin_a_percent}} %
+            </div>
+          </li>
+
+          <li class="thin_border">
+            <div class="align_left">
+             Vitamin C 
+            </div>
+            <div class="align_right">
+              {{item.vitamin_c_percent}} %
+            </div>
+          </li>
+
+          <li class="thin_border">
+            <div class="align_left">
+             Ion
+            </div>
+            <div class="align_right">
+              {{item.iron_percent}} %
+            </div>
+          </li>
+
+        </ul>
+
       </div>
       <a ng-click="window.open('{{item.website}}', '_system');" class="item item-icon-left">
         <i class="icon ion-earth"></i>
