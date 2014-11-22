@@ -49,5 +49,6 @@ angular.module('starter.controllers', [])
 .controller('NutritionCtrl', function($scope, $stateParams,$http) {
     $scope.id = $stateParams.id;
 })
-.controller('PlaylistCtrl', function($scope, $stateParams) {
-});
+.controller('MenuDetailCtrl', function($scope, $stateParams,$http) {
+    $scope.id = $stateParams.id;
+})
