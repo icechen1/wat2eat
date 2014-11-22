@@ -55,7 +55,7 @@ angular.module('starter.controllers', [])
     $http.get(url).
     success(function(data, status, headers, config) {
           $scope.data = data.data;
-          console.log("get productions = ", id);
+          console.log("get products = ", id);
     }).
     error(function(data, status, headers, config) {
       // log error
