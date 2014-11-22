@@ -1,6 +1,19 @@
-angular.module('starter.controllers', [])
+var app = angular.module('starter.controllers', [])
+app.factory('menu', function() {
+    var items = {};
+    var itemsService = {};
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout,$http) {
+    itemsService.add = function(item) {
+        items = item;
+    };
+    itemsService.retrieve = function() {
+        return items;
+    };
+
+    return itemsService;
+});
+
+app.controller('AppCtrl', function($scope, $ionicModal, $timeout,$http, menu) {
   // Form data for the login modal
   $scope.loginData = {};
 
@@ -36,11 +49,13 @@ angular.module('starter.controllers', [])
     //console.log(url);
     $http.get(url).
     success(function(data, status, headers, config) {
-          $scope.data = data.data;
+        menu.add(data.data);
+        $scope.data = menu.retrieve();
     }).
     error(function(data, status, headers, config) {
       // log error
     });
+
 })
 
 .controller('MenuCtrl', function($scope) {
@@ -49,6 +64,10 @@ angular.module('starter.controllers', [])
 .controller('NutritionCtrl', function($scope, $stateParams,$http) {
     $scope.id = $stateParams.id;
 })
-.controller('MenuDetailCtrl', function($scope, $stateParams,$http) {
+.controller('MenuDetailCtrl', function($scope, $stateParams,$http, menu) {
     $scope.id = $stateParams.id;
-})
+    $scope.data = menu.retrieve();
+    console.log($scope.data);
+    $scope.menus = $scope.data.outlets[$scope.id].menu;
+    console.log($scope.menus);
+});
