@@ -61,5 +61,6 @@ angular.module('starter.controllers', [])
       // log error
     });
 })
-.controller('PlaylistCtrl', function($scope, $stateParams) {
-});
+.controller('MenuDetailCtrl', function($scope, $stateParams,$http) {
+    $scope.id = $stateParams.id;
+})

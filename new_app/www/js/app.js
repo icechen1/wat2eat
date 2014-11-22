@@ -48,6 +48,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     })
     .state('app.menus', {
+      url: "/menu/:id",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/menu_details.html",
+          controller: 'MenuDetailCtrl'
+        }
+      }
+    })
+    .state('app.menus_listing', {
       url: "/menus",
       views: {
         'menuContent' :{
@@ -57,21 +66,11 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     })
     .state('app.products', {
-      url: "/menus",
+      url: "/products/:id",
       views: {
         'menuContent' :{
-          templateUrl: "templates/products.html",
+          templateUrl: "templates/product.html",
           controller: 'NutritionCtrl'
-        }
-      }
-    })
-
-    .state('app.single', {
-      url: "/playlists/:playlistId",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/playlist.html",
-          controller: 'PlaylistCtrl'
         }
       }
     });
