@@ -61,16 +61,17 @@ app.controller('AppCtrl', function($scope, $ionicModal, $timeout,$http, menu) {
 .controller('MenuCtrl', function($scope) {
 
 })
-.controller('NutritionCtrl', function($scope, $stateParams,$http) {
+.controller('NutritionCtrl', function($scope, $stateParams,$http, menu) {
     $scope.id = $stateParams.id;
 
-    var url = 'https://api.uwaterloo.ca/v2/foodservices/products/'+ id +'.json?key=a84456bafc8bb0eb83ca3c989634ef68';
+    var url = 'https://api.uwaterloo.ca/v2/foodservices/products/'+ $scope.id +'.json?key=a84456bafc8bb0eb83ca3c989634ef68';
     $scope.data = {};
+    $scope.item = {};
     //console.log(url);
     $http.get(url).
     success(function(data, status, headers, config) {
-          $scope.data = data.data;
-          console.log("get products = ", id);
+          $scope.item = data.data;
+          console.log($scope.item);
     }).
     error(function(data, status, headers, config) {
       // log error
