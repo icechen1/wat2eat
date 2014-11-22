@@ -1,1 +1,29 @@
 /* Empty. Add your own CSS if you like */
+.prod{
+	font-size: 3em;
+}
+.nutri{
+	font-size: 2em;
+}
+.bold_border{
+	border-bottom: 3px;
+	border-bottom: solid;
+	border-bottom: black;
+}
+.medium_border{
+	border-bottom: 2px;
+	border-bottom: solid;
+	border-bottom: black;
+}
+.thin_border{
+	border-bottom: 1px;
+	border-bottom: solid;
+	border-bottom: black;
+}
+.table_nutri{
+	max-width: 600px;
+	border: solid 1px black;
+}
+.left{
+	
+}

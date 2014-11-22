@@ -20,10 +20,10 @@
 
       <div class="item item-icon-left item-text-wrap">
         <i class="icon ion-card"></i>
-        
-        <h2>{{item.product_name}}</h2>
+        <div class="table_nutri">
+        <h2 class="prod">{{item.product_name}}</h2>
         <ul>
-          <li><h4>Nutrition Facts</h4></li>
+          <li><h4 class="nutri">Nutrition Facts</h4></li>
           <li class="bold_border">Per {{item.serving_size}}</li>
           <li class="medium_border">
             <div class="align_left">
@@ -142,6 +142,7 @@
           </li>
 
         </ul>
+      </div>
 
       </div>
       <a ng-click="window.open('{{item.website}}', '_system');" class="item item-icon-left">
