@@ -39,6 +39,15 @@ angular.module('starter', ['ionic', 'starter.controllers','angular.filter'])
       }
     })
   
+    .state('app.home', {
+      url: "/home",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/home.html"
+        }
+      }
+    })
+  
    .state('app.foodmenu', {
       url: "/foodmenu",
       views: {
@@ -48,6 +57,15 @@ angular.module('starter', ['ionic', 'starter.controllers','angular.filter'])
       }
     })
 
+    .state('app.locations', {
+      url: "/locations",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/locations.html"
+        }
+      }
+    })
+  
     .state('app.watcard', {
       url: "/watcard",
       views: {
@@ -57,41 +75,8 @@ angular.module('starter', ['ionic', 'starter.controllers','angular.filter'])
       }
     })
   
-    .state('app.locations', {
-      url: "/locations",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/locations.html"
-        }
-      }
-    })
-    .state('app.home', {
-      url: "/home",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/home.html"
-        }
-      }
-    })
-    .state('app.events', {
-      url: "/events",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/home.html",
-          controller: 'EventsCtrl'
-        }
-      }
-    })
-    .state('app.single', {
-      url: "/events/:id",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/event.html",
-          controller: 'EventCtrl'
-        }
-      }
-    });
+
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/events');
+  $urlRouterProvider.otherwise('/app/home');
 });
 
