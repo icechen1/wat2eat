@@ -1,8 +1,22 @@
-<ion-view title="Search">
+<ion-view title="Watcard">
   <ion-nav-buttons side="left">
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
   <ion-content class="has-header">
-    Watcard
+      <div class="list">
+      <label class="item item-input">
+        <input type="text" placeholder="First Name">
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="Last Name">
+      </label>
+      <label class="item item-input">
+        <a href="#/app/checkbalances" style="text-decoration: none">
+        <button ng-click="newPage()" class="button button-full button-positive" >
+            Check my balance
+        </button>
+        </a>
+      </label>
+    </div>
   </ion-content>
 </ion-view>

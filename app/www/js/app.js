@@ -74,6 +74,14 @@ angular.module('starter', ['ionic', 'starter.controllers','angular.filter'])
         }
       }
     })
+    .state('app.checkbalances', {
+      url: "/watcard",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/checkbalances.html"
+        }
+      }
+    })
   
 
   // if none of the above states are matched, use this as the fallback
