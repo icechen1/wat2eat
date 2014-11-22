@@ -75,7 +75,7 @@ angular.module('starter', ['ionic', 'starter.controllers','angular.filter'])
       }
     })
     .state('app.checkbalances', {
-      url: "/watcard",
+      url: "/checkbalances",
       views: {
         'menuContent' :{
           templateUrl: "templates/checkbalances.html"
