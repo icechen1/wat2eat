@@ -27,9 +27,9 @@ app.get('/', function(req, res){
     //res.send(fs.readFile('README.md'));
     //marked();
 })
-app.get('/api/calendar', function(req, res){
+app.get('/api/menu', function(req, res){
 	
-	url = 'http://www.ceca.uwaterloo.ca/students/sessions.php';
+	url = 'https://uwaterloo.ca/food-services/menu';
 
 	request(url, function(error, response, html){
 		if(!error){
@@ -39,32 +39,44 @@ app.get('/api/calendar', function(req, res){
             //var link;
 			var json = [];
             
-			$('a[onmouseover]').each(function(i,elem){
-		        var data = $(this);
-		        company = data.text();//data.children().first().text();     
-                //console.log(data);
-                link = data.attr('href');//children().last().children().text();
-                var thisJson = { company : "", link : "", id:"",info:""};
-		        thisJson.company = company;
-                thisJson.link = link;
-                thisJson.id = link.match(/=(.+)/)[1];
-                //thisJson.info = getEventDetails(thisJson.id);
-                json.push(thisJson);
-	        })
+			$('tr').each(function(i,elem){
+                var data = $(this);
+                
+                var dates = [];
+                var menu = {items:[]};
+                
+                //console.log(data.children);
+                if(i == 0){
+                    //Listings of dates
+                    var th = data.children('th');
+                    //console.log(th.length);
+                    for(var i=1;i<6;i++){
+                        dates.push(th[i].children[0].data);
+                    }
+                    console.log(dates);
+                    
+                }
+                if(i > 0){
+                    //Listings of dates
+                    var children = data.children();
+                    var menu_row = {items:[]};
+                    var name = data.find('th').find('img').attr('alt');
+                    //console.log(children);
+                    var td = data.find('td');
+                    //console.log(td.length);
+                    for(var i=1;i<6;i++){
+                        var row = {date:dates[i-1],
+                                   menu:td[i]};
+                        menu_row.items.push(row);
+                        //console.log(row);
+                    }
+                    menu.items.push({caf_name:name,data:menu_row});
+                    //console.log(menu);
+                }
+                console.log(menu);
+                json.push(menu);
+	        });
 		}
-        // To write to the system we will use the built in 'fs' library.
-        // In this example we will pass 3 parameters to the writeFile function
-        // Parameter 1 :  output.json - this is what the created filename will be called
-        // Parameter 2 :  JSON.stringify(json, null, 4) - the data to write, here we do an extra step by calling JSON.stringify to make our JSON easier to read
-        // Parameter 3 :  callback function - a callback function to let us know the status of our function
-
-  /*      fs.writeFile('output.json', JSON.stringify(json, null, 4), function(err){
-
-        	console.log('File successfully written! - Check your project directory for the output.json file');
-
-        }) */
-
-        // Finally, we'll just send out a message to the browser reminding you that this app does not have a UI.
         res.send(json);
 	})
 });
